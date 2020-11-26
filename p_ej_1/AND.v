@@ -1,7 +1,6 @@
 //4 bit AND module 
-module AND ( input a, output y );
-//   assing y = &(a);
-   assing y = a;   
+module AND ( input [3:0]a, output y );
+   assign y = &(a);
 endmodule
 
 
