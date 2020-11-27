@@ -1,4 +1,4 @@
-//Testbench for AND gate
+//Testbench for AND, OR, XOR ... 
 //Compile and run test with
 //$iverilog AND.v OR.v XOR.v AND_tb.v -o testb.out && vvp testb.out && gtkwave testbench.vcd
 
