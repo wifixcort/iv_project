@@ -6,28 +6,30 @@
 
 module test_tb;
    reg [3:0]a;//Input ports
-   reg [3:0]A;
-   reg [3:0]B;
-   reg [3:0]Xum;
-   reg Cout;
+   reg [3:0]b;
    
-   wire y_out;//AND output port
-   wire o_out;//OR output port
-   wire xo_out;//XOR output port      
+   wire [3:0]adder;
+   wire adder_carry;
+   
+   wire and_out;//AND output port
+   wire or_out;//OR output port
+   wire xor_out;//XOR output port      
 
    
-   AND and_tb(a, y_out);
-   OR or_tb((a), (o_out));
-   XOR xor_tb((a), (xo_out));
-   fullAdder f_add((A), (B), (1'b0), (Xum), (Cout));
+   AND and_tb(a, and_out);
+   OR or_tb((a), (or_out));
+   XOR xor_tb((a), (xor_out));
+   fullAdder full_adder_4bits((a), (b), (1'b0), (adder), (adder_carry));
    
    initial begin
 	  a = 0; // Initial state = All input down
+	  b = 0;
 	  $dumpfile("testbench.vcd");
 	  $dumpvars(0, test_tb);
 	  //Test input states	  
 	  //---------------------------------------------------
-	  #1 a[0] = 1;
+	  
+	  #1 a[0] = 1; b[3] = 1; b[1] = 1; b[0] = 1;
 	  #1 a[1] = 1; a[0] = 0;
 	  #1 a[0] = 1;
 	  #1 a[2] = 1; a[1] = 0; a[0] = 0;
@@ -35,7 +37,7 @@ module test_tb;
 	  #1 a[1] = 1; a[0] = 0;
 	  #1 a[0] = 1;
 	  #1 a[3] = 1; a[2] = 0; a[1] = 0; a[0] = 0;
-	  #1 a[0] = 1;
+	  #1 a[0] = 1; b[3] = 0;
 	  #1 a[1] = 1; a[0] = 0;
 	  #1 a[0] = 1;
 	  #1 a[2] = 1; a[1] = 0; a[0] = 0;
@@ -43,6 +45,7 @@ module test_tb;
 	  #1 a[1] = 1; a[0] = 0;
 	  #1 a[0] = 1;
 	  #1 a[3] = 0; a[2] = 0; a[1] = 0; a[0] = 0;
+	  b[1] = 0; b[0] = 0;
 	  //---------------------------------------------------
 	  //----Expected behavior----|
 	  // Input | AND | OR | XOR |
@@ -63,10 +66,6 @@ module test_tb;
 	  // 1110 |  0  |  1  |  1  |
 	  // 1111 |  1  |  1  |  0  |
 	  // 0000 |  0  |  0  |  0  |	  
-
-	  //Full Adder Test
-	  #1 A[3] = 1; A[2] = 0; A[1] = 1; A[0] = 0;
-	  #1 B[3] = 1; B[2] = 0; B[1] = 1; B[0] = 0;
 	  #2 
 	  $finish;	    
    end
