@@ -6,14 +6,20 @@
 
 module test_tb;
    reg [3:0]a;//Input ports
+   reg [3:0]A;
+   reg [3:0]B;
+   reg [3:0]Xum;
+   reg Cout;
+   
    wire y_out;//AND output port
    wire o_out;//OR output port
    wire xo_out;//XOR output port      
 
    
-   AND and_tb((a), (y_out));
+   AND and_tb(a, y_out);
    OR or_tb((a), (o_out));
    XOR xor_tb((a), (xo_out));
+   fullAdder f_add((A), (B), (1'b0), (Xum), (Cout));
    
    initial begin
 	  a = 0; // Initial state = All input down
@@ -58,6 +64,9 @@ module test_tb;
 	  // 1111 |  1  |  1  |  0  |
 	  // 0000 |  0  |  0  |  0  |	  
 
+	  //Full Adder Test
+	  #1 A[3] = 1; A[2] = 0; A[1] = 1; A[0] = 0;
+	  #1 B[3] = 1; B[2] = 0; B[1] = 1; B[0] = 0;
 	  #2 
 	  $finish;	    
    end
