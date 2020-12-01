@@ -1,74 +1,76 @@
 //Testbench for AND, OR, XOR ... 
-//Compile and run test with
-//$iverilog AND.v OR.v XOR.v AND_tb.v -o testb.out && vvp testb.out && gtkwave testbench.vcd
+//Compile and run test with Makefile or :
+//$iverilog AND.v OR.v XOR.v test_b_ejercicio_uno.v -o testb.out && vvp testb.out && gtkwave testbench.vcd
 
 `timescale 1ns/1ps
 
 module test_tb;
-   reg [3:0]a;//Input ports
-   reg [3:0]b;
+   // Data types definitions
+   //Inputs
+   reg [3:0]a;//Input port "a"
+   reg [3:0]b;//Input port "b"
+   reg adder_carry_in;// Full Adder carry input
+   reg [3:0] s;//Mux selection
    
-   wire [3:0]adder;
-   wire adder_carry;
-   
-   wire and_out;//AND output port
-   wire or_out;//OR output port
-   wire xor_out;//XOR output port      
+   //Outputs
+   wire [3:0]and_out;//AND output port
+   wire [3:0]or_out;//OR output port
+   wire [3:0]xor_out;//XOR output port      
+   wire [3:0]adder_output;//Full Adder output
+   wire adder_carry_out;// Full Adder carry output
+
+   //Modules Instanciations
+   AND and_tb((a), (b), (and_out));
+   OR or_tb((a), (b), (or_out));
+   XOR xor_tb((a), (b), (xor_out));
+   fullAdder full_adder_4bits((a), (b), (adder_carry_in), (adder_output), (adder_carry_out));
 
    
-   AND and_tb(a, and_out);
-   OR or_tb((a), (or_out));
-   XOR xor_tb((a), (xor_out));
-   fullAdder full_adder_4bits((a), (b), (1'b0), (adder), (adder_carry));
-   
-   initial begin
-	  a = 0; // Initial state = All input down
-	  b = 0;
-	  $dumpfile("testbench.vcd");
-	  $dumpvars(0, test_tb);
-	  //Test input states	  
-	  //---------------------------------------------------
-	  
-	  #1 a[0] = 1; b[3] = 1; b[1] = 1; b[0] = 1;
-	  #1 a[1] = 1; a[0] = 0;
-	  #1 a[0] = 1;
-	  #1 a[2] = 1; a[1] = 0; a[0] = 0;
-	  #1 a[0] = 1;
-	  #1 a[1] = 1; a[0] = 0;
-	  #1 a[0] = 1;
-	  #1 a[3] = 1; a[2] = 0; a[1] = 0; a[0] = 0;
-	  #1 a[0] = 1; b[3] = 0;
-	  #1 a[1] = 1; a[0] = 0;
-	  #1 a[0] = 1;
-	  #1 a[2] = 1; a[1] = 0; a[0] = 0;
-	  #1 a[0] = 1;
-	  #1 a[1] = 1; a[0] = 0;
-	  #1 a[0] = 1;
-	  #1 a[3] = 0; a[2] = 0; a[1] = 0; a[0] = 0;
-	  b[1] = 0; b[0] = 0;
-	  //---------------------------------------------------
-	  //----Expected behavior----|
-	  // Input | AND | OR | XOR |
-	  // 0000 |  0  |  0  |  0  |
-	  // 0001 |  0  |  1  |  1  |	  
-	  // 0010 |  0  |  1  |  1  |
-	  // 0011 |  0  |  1  |  0  |
-	  // 0100 |  0  |  1  |  1  |
-	  // 0101 |  0  |  1  |  0  |
-	  // 0110 |  0  |  1  |  0  |
-	  // 0111 |  0  |  1  |  1  |
-	  // 1000 |  0  |  1  |  1  |
-	  // 1001 |  0  |  1  |  0  |
-	  // 1010 |  0  |  1  |  0  |
-	  // 1011 |  0  |  1  |  1  |
-	  // 1100 |  0  |  1  |  0  |
-	  // 1101 |  0  |  1  |  1  |
-	  // 1110 |  0  |  1  |  1  |
-	  // 1111 |  1  |  1  |  0  |
-	  // 0000 |  0  |  0  |  0  |	  
-	  #2 
-	  $finish;	    
-   end
+   initial 
+	 begin
+		// Initial state = All input down
+		a = 0; 
+		b = 0;
+		adder_carry_in = 1;
+		$monitor($time, " Vector a, b: [%b] , [%b]", a, b);
+		$dumpfile("testbench.vcd");
+		$dumpvars(0, test_tb);
+	 end
+
+   //Stimulous: signals to apply
+   initial 
+	 begin
+		//Test input states	  
+		//---------------------------------------------------
+		#1 adder_carry_in = 0;
+		#1 a = 4'h1; b = 4'hE;
+		#1 a = 4'hE; b = 4'h1; adder_carry_in = 1;
+		#1 a = 4'hF; b = 4'hF;
+		#1 a = 4'hF; b = 4'hF; adder_carry_in = 0;
+		#1 a = 4'h0; b = 4'h0;
+		//---------------------------------------------------
+		//----Expected behavior----|
+		//   Input  |  AND  |  OR  |  XOR  |
+		// A = 0000   
+		//---------   0000    0000   0000
+		// B = 0000
+		//---------------------------------
+		// A = 0001   
+		//---------   0000    1111   1111
+		// B = 1110
+		//---------------------------------
+		// A = 1110   
+		//---------   0000    1111   1111
+		// B = 0001
+		//---------------------------------
+		// A = 1111   
+		//---------   0000    0000   0000
+		// B = 1111
+		//--------------------------------- 	  
+		// 0000     |  0  |  0  |  0  |	  
+		#2 
+		  $finish;	    
+	 end
 endmodule
 	  
    

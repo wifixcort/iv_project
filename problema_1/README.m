@@ -2,7 +2,7 @@
 
 Se dispone de un Makefile para compilar todos los archivos y crear el banco de pruebas necesario.
 
-Ejercio 1
+-----------Ejercio 1-----------
 
 * AND.v módulo de una AND de 4 entradas
 * OR.v módulo de una OR de 4 entradas
@@ -11,5 +11,5 @@ Ejercio 1
 * fad_cell.v (full adder cell), módulo de una celda típica para constuir un sumador completo de 4 bits
 * full_adder.v módulo de sumador completo de 4 bits
 * test_b_ejercicio_uno.v "banco" de pruebas realizada a los módulos creados para ele ejercicio 1
-* test_b_ejercicio_dos.v "banco" de pruebas realizada a los módulos creados para ele ejercicio 2
+
 
