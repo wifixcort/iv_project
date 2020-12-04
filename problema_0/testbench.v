@@ -19,25 +19,36 @@ initial begin
     clk = 0;
     reset = 1'b0;
     {In_0,In_1} = 1'b0;
+//   In_0 = 1'b1; In_1 = 1'b0;
     Select = 1'b0;
 
     @(posedge clk) begin
         In_1 = 1'b1;
     end
 
-    #5; reset = 1'b1;
+   #5; reset = 1'b1;
 
     @(posedge clk) begin
-        Select = 1'b1;
-    end
+       Select = 1'b1;
+    end 
 
+   
+//   In_1 <= #35  1'b0; 
+//   In_0 <= #10 1'b1;
+   In_1 <= #15  1'b0; 
+   In_0 <= #15 1'b1;   
+   In_0 <= #43 1'b0;
+   In_1 <= #60 1'b1;   
+   
     repeat(5) begin
         @(posedge clk) begin
-            Select = Select + 1;
+             Select = Select + 1;
         end
     end
+   //   #15 In_1 = 1'b0;
+//   #20 In_1 = 1'b1;
 
-
+   
     #20;
 
     $finish;

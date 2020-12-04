@@ -1,10 +1,10 @@
 module mux_2x1_2 (
-    input clk,
-    input reset,
-    input A_in,
-    input B_in,
-    input Select_in,
-    output reg Y_out
+				  input 	 clk,
+				  input 	 reset,
+				  input 	 A_in,
+				  input 	 B_in,
+				  input 	 Select_in,
+				  output reg Y_out
 );
 
 always @(posedge clk) begin

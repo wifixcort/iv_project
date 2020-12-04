@@ -20,10 +20,11 @@ IV=iverilog
 VP =vvp
 GT = gtkwave
 # Regla de creación del ejecutable final
+#mux_2x1_1.v  mux_2x1_2.v
 $(PROG):
-	$(IV)  AND.v OR.v XOR.v TestB_tb.v -o $@.out
+	$(IV) testbench.v -o $@.out
 	$(VP) $@.out
-	$(GT) testbench.vcd
+	$(GT) muxes.vcd
 
 
 # Los target PHONY son targets que realizan funciones miscelaneas, no 

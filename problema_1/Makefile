@@ -21,7 +21,7 @@ VP =vvp
 GT = gtkwave
 # Regla de creación del ejecutable final
 $(PROG):
-	$(IV)  AND.v OR.v XOR.v full_adder.v test_b_ejercicio_uno.v -o $@.out
+	$(IV)  AND.v OR.v XOR.v full_adder.v MUX4x1.v test_b_ejercicio_uno.v -o $@.out
 	$(VP) $@.out
 	$(GT) testbench.vcd
 
