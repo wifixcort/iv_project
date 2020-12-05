@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name iv_diagrams-cache)(type Legacy)(uri /home/ricardo/Git_Repos/iv_project/diagramas/iv_diagrams/iv_diagrams-cache.lib)(options "")(descr ""))
+  (lib (name Celta_tipica)(type Legacy)(uri /home/ricardo/Git_Repos/iv_project/diagramas/iv_diagrams/Celta_tipica.lib)(options "")(descr ""))
+)

@@ -343,4 +343,275 @@ Wire Wire Line
 	5350 2650 5150 2650
 Wire Wire Line
 	5350 2900 5150 2900
+$Comp
+L Celta_tipica:Celda_Tipica U?
+U 1 1 5FCADD3F
+P 1500 6500
+F 0 "U?" H 2041 6571 50  0001 L CNN
+F 1 "Celda_Tipica" H 1300 6500 50  0000 L CNN
+F 2 "" H 1500 6500 50  0001 C CNN
+F 3 "" H 1500 6500 50  0001 C CNN
+	1    1500 6500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1000 6500 850  6500
+$Comp
+L 74xGxx:74LVC1G386 U?
+U 1 1 5FCB50D7
+P 9400 5000
+F 0 "U?" H 9400 5222 50  0001 C CNN
+F 1 "74LVC1G386" H 9400 5223 50  0001 C CNN
+F 2 "" H 9400 5000 50  0001 C CNN
+F 3 "http://www.ti.com/lit/sg/scyt129e/scyt129e.pdf" H 9400 5000 50  0001 C CNN
+	1    9400 5000
+	1    0    0    -1  
+$EndComp
+$Comp
+L 74xGxx:74AHC1G08 U?
+U 1 1 5FCB512B
+P 9000 5300
+F 0 "U?" H 8975 5475 50  0001 C CNN
+F 1 "74AHC1G08" H 8975 5476 50  0001 C CNN
+F 2 "" H 9000 5300 50  0001 C CNN
+F 3 "http://www.ti.com/lit/sg/scyt129e/scyt129e.pdf" H 9000 5300 50  0001 C CNN
+	1    9000 5300
+	1    0    0    -1  
+$EndComp
+$Comp
+L 74xGxx:74AHC1G08 U?
+U 1 1 5FCB5138
+P 9000 5550
+F 0 "U?" H 8975 5725 50  0001 C CNN
+F 1 "74AHC1G08" H 8975 5726 50  0001 C CNN
+F 2 "" H 9000 5550 50  0001 C CNN
+F 3 "http://www.ti.com/lit/sg/scyt129e/scyt129e.pdf" H 9000 5550 50  0001 C CNN
+	1    9000 5550
+	1    0    0    -1  
+$EndComp
+$Comp
+L 74xGxx:74AHC1G08 U?
+U 1 1 5FCB5145
+P 9000 5800
+F 0 "U?" H 8975 5975 50  0001 C CNN
+F 1 "74AHC1G08" H 8975 5976 50  0001 C CNN
+F 2 "" H 9000 5800 50  0001 C CNN
+F 3 "http://www.ti.com/lit/sg/scyt129e/scyt129e.pdf" H 9000 5800 50  0001 C CNN
+	1    9000 5800
+	1    0    0    -1  
+$EndComp
+Text GLabel 8400 4900 0    50   Input ~ 0
+A
+Text GLabel 8400 5000 0    50   Input ~ 0
+B
+Text GLabel 10150 5000 2    50   Input ~ 0
+Sum
+Text GLabel 10150 5550 2    50   Input ~ 0
+Cout
+Text GLabel 8400 5100 0    50   Input ~ 0
+Cin
+Wire Wire Line
+	8400 4900 8650 4900
+Wire Wire Line
+	8400 5000 8600 5000
+Wire Wire Line
+	8400 5100 8550 5100
+$Comp
+L 74xGxx:74LVC1G332 U?
+U 1 1 5FCBA6BD
+P 9700 5550
+F 0 "U?" H 9700 5772 50  0001 C CNN
+F 1 "74LVC1G332" H 9700 5773 50  0001 C CNN
+F 2 "" H 9700 5550 50  0001 C CNN
+F 3 "http://www.ti.com/lit/sg/scyt129e/scyt129e.pdf" H 9700 5550 50  0001 C CNN
+	1    9700 5550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9250 5550 9400 5550
+Wire Wire Line
+	9400 5450 9350 5450
+Wire Wire Line
+	9350 5450 9350 5300
+Wire Wire Line
+	9350 5300 9250 5300
+Wire Wire Line
+	9400 5650 9350 5650
+Wire Wire Line
+	9350 5650 9350 5800
+Wire Wire Line
+	9350 5800 9250 5800
+Wire Wire Line
+	8700 5250 8650 5250
+Wire Wire Line
+	8650 5250 8650 4900
+Connection ~ 8650 4900
+Wire Wire Line
+	8650 4900 9100 4900
+Wire Wire Line
+	8700 5350 8550 5350
+Wire Wire Line
+	8550 5350 8550 5100
+Connection ~ 8550 5100
+Wire Wire Line
+	8550 5100 9100 5100
+Wire Wire Line
+	8700 5500 8600 5500
+Wire Wire Line
+	8600 5500 8600 5000
+Connection ~ 8600 5000
+Wire Wire Line
+	8600 5000 9100 5000
+Wire Wire Line
+	8700 5600 8550 5600
+Wire Wire Line
+	8550 5600 8550 5350
+Connection ~ 8550 5350
+Wire Wire Line
+	8700 5750 8650 5750
+Wire Wire Line
+	8650 5750 8650 5250
+Connection ~ 8650 5250
+Wire Wire Line
+	8700 5850 8550 5850
+Wire Wire Line
+	8550 5850 8550 5600
+Connection ~ 8550 5600
+Wire Wire Line
+	9700 5000 10150 5000
+Wire Wire Line
+	10150 5550 10000 5550
+Wire Notes Line
+	10050 4800 8500 4800
+Wire Notes Line
+	10050 5950 8500 5950
+Wire Notes Line
+	8500 4800 8500 5950
+Wire Notes Line
+	10050 4800 10050 5950
+$Comp
+L Celta_tipica:Celda_Tipica U?
+U 1 1 5FCDADD3
+P 2550 6500
+F 0 "U?" H 3091 6571 50  0001 L CNN
+F 1 "Celda_Tipica" H 2350 6500 50  0000 L CNN
+F 2 "" H 2550 6500 50  0001 C CNN
+F 3 "" H 2550 6500 50  0001 C CNN
+	1    2550 6500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Celta_tipica:Celda_Tipica U?
+U 1 1 5FCDADDE
+P 3600 6500
+F 0 "U?" H 4141 6571 50  0001 L CNN
+F 1 "Celda_Tipica" H 3400 6500 50  0000 L CNN
+F 2 "" H 3600 6500 50  0001 C CNN
+F 3 "" H 3600 6500 50  0001 C CNN
+	1    3600 6500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Celta_tipica:Celda_Tipica U?
+U 1 1 5FCDADE9
+P 4650 6500
+F 0 "U?" H 5191 6571 50  0001 L CNN
+F 1 "Celda_Tipica" H 4450 6500 50  0000 L CNN
+F 2 "" H 4650 6500 50  0001 C CNN
+F 3 "" H 4650 6500 50  0001 C CNN
+	1    4650 6500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4150 6500 4100 6500
+Wire Wire Line
+	3100 6500 3050 6500
+Wire Wire Line
+	2000 6500 2050 6500
+Wire Wire Line
+	4650 7000 4650 7400
+Wire Wire Line
+	4650 7400 850  7400
+Wire Wire Line
+	1500 7100 850  7100
+Wire Wire Line
+	1500 7000 1500 7100
+Wire Wire Line
+	2550 7000 2550 7200
+Wire Wire Line
+	2550 7200 850  7200
+Wire Wire Line
+	3600 7000 3600 7300
+Wire Wire Line
+	3600 7300 850  7300
+Text GLabel 850  7100 0    50   Input ~ 0
+S_3
+Text GLabel 850  7200 0    50   Input ~ 0
+S_2
+Text GLabel 850  7400 0    50   Input ~ 0
+S_0
+Text GLabel 850  6500 0    50   Input ~ 0
+C_out
+Text GLabel 5200 5800 2    50   Input ~ 0
+B_0
+Text GLabel 5200 5700 2    50   Input ~ 0
+B_1
+Text GLabel 5200 5600 2    50   Input ~ 0
+B_2
+Text GLabel 5200 5500 2    50   Input ~ 0
+B_3
+Text GLabel 5200 5300 2    50   Input ~ 0
+A_3
+Text GLabel 5200 5200 2    50   Input ~ 0
+A_2
+Text GLabel 5200 5100 2    50   Input ~ 0
+A_1
+Text GLabel 5200 5000 2    50   Input ~ 0
+A_0
+Text GLabel 5200 6500 2    50   Input ~ 0
+C_in
+Wire Wire Line
+	5200 6500 5150 6500
+Wire Wire Line
+	5200 5000 4800 5000
+Wire Wire Line
+	4800 5000 4800 5950
+Wire Wire Line
+	5200 5100 3750 5100
+Wire Wire Line
+	3750 5100 3750 5950
+Wire Wire Line
+	5200 5200 2700 5200
+Wire Wire Line
+	2700 5200 2700 5950
+Wire Wire Line
+	5200 5300 1650 5300
+Wire Wire Line
+	1650 5300 1650 5950
+Wire Wire Line
+	5200 5500 1350 5500
+Wire Wire Line
+	1350 5500 1350 5950
+Wire Wire Line
+	5200 5600 2400 5600
+Wire Wire Line
+	2400 5600 2400 5950
+Wire Wire Line
+	5200 5700 3450 5700
+Wire Wire Line
+	3450 5700 3450 5950
+Wire Wire Line
+	5200 5800 4500 5800
+Wire Wire Line
+	4500 5800 4500 5950
+Wire Notes Line
+	900  7600 5150 7600
+Wire Notes Line
+	5150 7600 5150 4950
+Wire Notes Line
+	5150 4950 900  4950
+Wire Notes Line
+	900  4950 900  7600
+Text GLabel 850  7300 0    50   Input ~ 0
+S_1
 $EndSCHEMATC

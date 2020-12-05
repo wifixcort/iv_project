@@ -1,6 +1,6 @@
-//Testbench for AND, OR, XOR ...  
-//Compile and run test with Makefile or :
-//$iverilog AND.v OR.v XOR.v test_b_ejercicio_uno.v -o testb.out && vvp testb.out && gtkwave testbench.vcd
+//Testbench for AND, OR, XOR Full Adder MUX...  
+//Compile and run this test with Makefile or :
+//$iverilog AND.v OR.v XOR.v full_adder.v MUX4x1.v test_b_ejercicio_uno.v -o testb.out && vvp testb.out && gtkwave testbench.vcd
 
 `timescale 1ns/1ps
 
@@ -48,7 +48,7 @@ module test_tb;
 
    initial 
 	 begin
-		//Test input states
+		//Test input cases
 		$display("                  Time    A      B     AND    OR    XOR Cin Adder Cout");
 		//---------------------------------------------------
 		#1 adder_carry_in = 0; mux_select = 3'd1;
@@ -57,6 +57,10 @@ module test_tb;
 		#1 a = 4'hF; b = 4'hF; 
 		#1 adder_carry_in = 0;
 		#1 a = 4'h0; b = 4'h0;
+		#1 adder_carry_in = 1;
+		#1 a = 4'h1; b = 4'h1;
+		#1 a = 4'h2; b = 4'h2;
+		#1 a = 4'h4; b = 4'h4;
 		//---------------------------------------------------
 		//----Expected behavior----|
 		//   Input  |  AND  |  OR  |  XOR  |

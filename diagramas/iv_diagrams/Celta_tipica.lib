@@ -1,0 +1,36 @@
+EESchema-LIBRARY Version 2.4
+#encoding utf-8
+#
+# Celda_Tipica
+#
+DEF Celda_Tipica U 0 40 Y Y 4 F N
+F0 "U" 0 200 50 H V C CNN
+F1 "Celda_Tipica" 0 0 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+DRAW
+S -300 350 300 -300 0 1 0 N
+X ~ ~ -500 0 200 R 50 50 1 1 I
+X ~ ~ -150 550 200 D 50 50 1 1 I
+X ~ ~ 0 -500 200 U 50 50 1 1 I
+X ~ ~ 150 550 200 D 50 50 1 1 I
+X ~ ~ 500 0 200 L 50 50 1 1 I
+X ~ ~-UB -500 0 200 R 50 50 2 1 I
+X ~ ~-UB -150 550 200 D 50 50 2 1 I
+X ~ ~-UB 0 -500 200 U 50 50 2 1 I
+X ~ ~-UB 150 550 200 D 50 50 2 1 I
+X ~ ~-UB 500 0 200 L 50 50 2 1 I
+X ~ ~-UC -500 0 200 R 50 50 3 1 I
+X ~ ~-UC -150 550 200 D 50 50 3 1 I
+X ~ ~-UC 0 -500 200 U 50 50 3 1 I
+X ~ ~-UC 150 550 200 D 50 50 3 1 I
+X ~ ~-UC 500 0 200 L 50 50 3 1 I
+X ~ ~-UD -500 0 200 R 50 50 4 1 I
+X ~ ~-UD -150 550 200 D 50 50 4 1 I
+X ~ ~-UD 0 -500 200 U 50 50 4 1 I
+X ~ ~-UD 150 550 200 D 50 50 4 1 I
+X ~ ~-UD 500 0 200 L 50 50 4 1 I
+ENDDRAW
+ENDDEF
+#
+#End Library
