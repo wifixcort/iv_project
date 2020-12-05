@@ -56,8 +56,6 @@ module test_tb;
 		#1 a = 4'hE; b = 4'h1; mux_select = 3'd3; adder_carry_in = 1; 
 		#1 a = 4'hF; b = 4'hF; 
 		#1 adder_carry_in = 0;
-		#1 a = 4'h0; b = 4'h0;
-		#1 adder_carry_in = 1;
 		#1 a = 4'h1; b = 4'h1;
 		#1 a = 4'h2; b = 4'h2;
 		#1 a = 4'h4; b = 4'h4;
