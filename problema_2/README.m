@@ -4,7 +4,7 @@ Se dispone de un Makefile para compilar todos los archivos y crear el banco de p
 
 -----------Ejercio 2-----------
 
-Se retutilizan todos los módulos creados en el ejercio uno:
+Se reutilizan todos los módulos creados en el ejercio uno:
 
   *---------------------------------------------
   * AND.v módulo de una AND de 4 entradas

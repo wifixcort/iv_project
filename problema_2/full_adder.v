@@ -2,7 +2,7 @@
 `include "fad_cell.v"
 
 module fullAdder(input [3:0] A, B, input Cin, output [3:0] Sum, output Cout);
-   wire C_0, C_1, C_2;//States
+   wire C_0, C_1, C_2;//Nets
    
    fad_cell fulladder_cell_0((A[0]), (B[0]), Cin, Sum[0], C_0);//Initial Cell
    fad_cell fulladder_cell_1((A[1]), (B[1]), C_0, Sum[1], C_1);//Middle Cell
