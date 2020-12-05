@@ -26,7 +26,7 @@ module alu_tb;
 		//Inicial configurations
 		a = 0; 
 		b = 0;
-		alu_select = 3'd0;//ALU initial stimulous
+		alu_select = 2'd0;//ALU initial stimulous
 
 		$dumpfile("testbench_alu.vcd");
 		$dumpvars(0, alu_tb);
@@ -36,12 +36,11 @@ module alu_tb;
 	 begin
 		//Test input cases
 		//---------------------------------------------------
-		#1 alu_select = 3'd1;
-		#1 a = 4'h1; b = 4'hE; alu_select = 3'd2;
-		#1 a = 4'hE; b = 4'h1; alu_select = 3'd3;
-		#1 a = 4'hF; b = 4'hF; alu_select = 3'd0;
-		#1  alu_select = 3'd2;
-		#1 a = 4'h0; b = 4'h0; alu_select = 3'd1;
+		#1 a = 4'hF; b = 4'hF; //Perform AND operation
+		#1 a = 4'h1; b = 4'hE; alu_select = 2'd1;//Perform OR operation
+		#1 a = 4'hE; b = 4'h1; alu_select = 2'd2;//Perform XOR operation
+		#1 a = 4'hF; b = 4'hF; alu_select = 2'd3;//Perform Add operation
+		#1 a = 4'h0; b = 4'h0; alu_select = 2'd0;//Perform AND operation
 		
 		//---------------------------------------------------
 		#2 
