@@ -21,9 +21,9 @@ VP =vvp
 GT = gtkwave
 # Regla de creación del ejecutable final
 $(PROG):
-	$(IV)  ALU.v test_b_ejercicio_dos.v -o $@.out
+	$(IV)  ALU.v test_b_ejercicio_extra.v -o $@.out
 	$(VP) $@.out
-	$(GT) testbench_alu.vcd
+	$(GT) testbench_extra.vcd
 
 
 # Los target PHONY son targets que realizan funciones miscelaneas, no 

@@ -35,6 +35,7 @@ initial begin
    
 //   In_1 <= #35  1'b0; 
 //   In_0 <= #10 1'b1;
+   //Non blocking assignments added
    In_1 <= #15  1'b0; 
    In_0 <= #15 1'b1;   
    In_0 <= #43 1'b0;

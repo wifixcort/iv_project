@@ -614,4 +614,107 @@ Wire Notes Line
 	900  4950 900  7600
 Text GLabel 850  7300 0    50   Input ~ 0
 S_1
+$Comp
+L 74xGxx:74AUC2G04 U?
+U 1 1 5FCC952A
+P 9200 1500
+F 0 "U?" H 9175 1675 50  0001 C CNN
+F 1 "74AUC2G04" H 9175 1676 50  0001 C CNN
+F 2 "" H 9200 1500 50  0001 C CNN
+F 3 "http://www.ti.com/lit/sg/scyt129e/scyt129e.pdf" H 9200 1500 50  0001 C CNN
+	1    9200 1500
+	1    0    0    -1  
+$EndComp
+$Comp
+L 74xGxx:74AUC2G04 U?
+U 1 1 5FCC9613
+P 9200 1750
+F 0 "U?" H 9175 1925 50  0001 C CNN
+F 1 "74AUC2G04" H 9175 1926 50  0001 C CNN
+F 2 "" H 9200 1750 50  0001 C CNN
+F 3 "http://www.ti.com/lit/sg/scyt129e/scyt129e.pdf" H 9200 1750 50  0001 C CNN
+	1    9200 1750
+	1    0    0    -1  
+$EndComp
+$Comp
+L 74xGxx:74AUC2G04 U?
+U 1 1 5FCC961E
+P 9200 2000
+F 0 "U?" H 9175 2175 50  0001 C CNN
+F 1 "74AUC2G04" H 9175 2176 50  0001 C CNN
+F 2 "" H 9200 2000 50  0001 C CNN
+F 3 "http://www.ti.com/lit/sg/scyt129e/scyt129e.pdf" H 9200 2000 50  0001 C CNN
+	1    9200 2000
+	1    0    0    -1  
+$EndComp
+$Comp
+L 74xGxx:74AUC2G04 U?
+U 1 1 5FCC9629
+P 9200 2250
+F 0 "U?" H 9175 2425 50  0001 C CNN
+F 1 "74AUC2G04" H 9175 2426 50  0001 C CNN
+F 2 "" H 9200 2250 50  0001 C CNN
+F 3 "http://www.ti.com/lit/sg/scyt129e/scyt129e.pdf" H 9200 2250 50  0001 C CNN
+	1    9200 2250
+	1    0    0    -1  
+$EndComp
+$Comp
+L 74xGxx:74AUC2G04 U?
+U 1 1 5FCC9634
+P 9150 3050
+F 0 "U?" H 9125 3225 50  0001 C CNN
+F 1 "74AUC2G04" H 9125 3226 50  0001 C CNN
+F 2 "" H 9150 3050 50  0001 C CNN
+F 3 "http://www.ti.com/lit/sg/scyt129e/scyt129e.pdf" H 9150 3050 50  0001 C CNN
+	1    9150 3050
+	1    0    0    -1  
+$EndComp
+Text GLabel 8650 1500 0    50   Input ~ 0
+A_0
+Text GLabel 8650 1750 0    50   Input ~ 0
+A_1
+Text GLabel 8650 2000 0    50   Input ~ 0
+A_2
+Text GLabel 8650 2250 0    50   Input ~ 0
+A_3
+Text GLabel 8650 3050 0    50   Input ~ 0
+Vector_A
+Text GLabel 9600 3050 2    50   Input ~ 0
+Vector_~A
+Wire Wire Line
+	8850 3050 8650 3050
+Wire Wire Line
+	9400 3050 9600 3050
+Text GLabel 9650 1500 2    50   Input ~ 0
+A_~0
+Text GLabel 9650 1750 2    50   Input ~ 0
+A_~1
+Text GLabel 9650 2000 2    50   Input ~ 0
+A_~2
+Text GLabel 9650 2250 2    50   Input ~ 0
+A_~3
+Wire Wire Line
+	8650 1500 8900 1500
+Wire Wire Line
+	8650 1750 8900 1750
+Wire Wire Line
+	8650 2000 8900 2000
+Wire Wire Line
+	8900 2250 8650 2250
+Wire Wire Line
+	9450 1500 9650 1500
+Wire Wire Line
+	9650 1750 9450 1750
+Wire Wire Line
+	9650 2000 9450 2000
+Wire Wire Line
+	9450 2250 9650 2250
+Wire Notes Line
+	9500 1350 8850 1350
+Wire Notes Line
+	8850 2400 9500 2400
+Wire Notes Line
+	8850 1350 8850 2400
+Wire Notes Line
+	9500 1350 9500 2400
 $EndSCHEMATC
